@@ -10,7 +10,7 @@ shared_examples_for "a transporter method" do
       :print_stdout => true
     }
 
-    s = stub(command)
+    s = double(:command)
     s.should_receive(:run)
 
     klass = ITunes::Store::Transporter::Command.const_get(command)
